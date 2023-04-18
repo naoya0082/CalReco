@@ -14,22 +14,19 @@
                     @endif
 
                     <!-- {{ __('You are logged in!') }} -->
-                    <button class="btn btn-primary">食事を記録</button>
-                    <button class="btn btn-primary">今日の体重を記録</button>
+                    <button class="btn btn-primary" style="margin-right: 5px">食事を記録</button>
+                    <button class="btn btn-primary" style="margin-right: 5px">今日の体重を記録</button>
                     <button class="btn btn-primary">過去の記録を確認</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row justify-content-center" style="margin-top: 20px">
+    <div class="row justify-content-center mt-3">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
                     
-
-                    
-
                 </div>
             </div>
         </div>
