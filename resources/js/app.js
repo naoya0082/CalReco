@@ -17,6 +17,8 @@ const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
+import Modal from './components/Modal.vue';
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,3 +39,15 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+
+export default {
+    name: 'App',
+    components: {
+      Modal
+    },
+    data() {
+      return {
+        showModal: false
+      }
+    }
+  }
