@@ -31,15 +31,16 @@
                     @endif
 
                     <button class="btn btn-primary" style="margin-right: 5px">食事を記録</button>
-                    {{-- <button class="btn btn-primary" style="margin-right: 5px" @click="showModal = true">今日の体重を記録</button> --}}
-                    <button class="btn btn-primary" style="margin-right: 5px" v-on:click="console.log('OK')">今日の体重を記録</button>
+                    <button class="btn btn-primary" style="margin-right: 5px" @click="openModal">今日の体重を記録</button>
                     <button class="btn btn-primary">過去の記録を確認</button>
                 </div>
-                <template>
-                <Modal v-if="showModal" @close="showModal = false"/>
-                </template>
             </div>
         </div>
     </div>
+
+    <Modal ref="modal">
+        モーダルの中身
+    </Modal>
 </div>
+
 @endsection
