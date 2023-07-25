@@ -1,6 +1,5 @@
 import './bootstrap';
-import { createApp, provide, ref } from 'vue';
-
+import { createApp, ref } from 'vue';
 import Modal from './components/Modal.vue';
 
 const app = createApp({
@@ -8,22 +7,15 @@ const app = createApp({
     Modal
   },
   setup() {
-    const modal = ref({});
+    const modal = ref(null);
     
     const openModal = () => {
-   
         modal.value.open();
     };
 
-    const closeModal = () => {
-        modal.value.close();
-    };
-
-    provide('modal', modal);
-
     return {
-        openModal,
-        closeModal
+        modal,
+        openModal
     }
   }
 });
