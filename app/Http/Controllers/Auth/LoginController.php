@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\LoginHistory;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -36,5 +39,21 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    // ログインに成功した際に実行されるメソッド
+    protected function authenticated(Request $request, $user)
+    {
+        self::insertLoginHistory($user);
+    }
+    
+    // ログイン履歴をDBに保存する処理
+    private function insertLoginHistory($user)
+    {
+        $login_history_id = LoginHistory::insertGetId([
+            'user_id' => $user['id'],
+            'user_name' => $user['name'],
+            'email' => $user['email'],
+        ]);
     }
 }
