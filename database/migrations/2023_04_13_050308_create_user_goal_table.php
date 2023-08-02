@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('user_goal', function (Blueprint $table) {
             $table->string('user_id',100)->primary();
+            $table->string('user_name', 100);
             $table->integer('weight');
             $table->integer('fat_persentage');
             $table->integer('bmi');

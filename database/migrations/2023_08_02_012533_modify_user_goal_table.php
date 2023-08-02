@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('login_history', function (Blueprint $table) {
-            $table->bigIncrements('history_id');
-            $table->string('user_id',100);
-            $table->string('user_name', 100);
-            $table->timestamps();
+        Schema::table('user_goal', function (Blueprint $table) {
+            $table->string('user_name',100)->after('user_id');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('login_history');
+        Schema::table('user_goal', function (Blueprint $table) {
+            $table->dropColumn('user_name');
+        });
     }
 };

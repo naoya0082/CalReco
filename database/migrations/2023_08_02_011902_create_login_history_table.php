@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_health_status', function (Blueprint $table) {
-            $table->string('user_id',100)->primary();
+        Schema::create('login_history', function (Blueprint $table) {
+            $table->bigIncrements('login_history_id');
+            $table->string('user_id',100);
             $table->string('user_name', 100);
-            $table->integer('weight');
-            $table->integer('height');
-            $table->integer('fat_percentage');
-            $table->integer('bmi');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_health_status');
+        Schema::dropIfExists('login_history');
     }
 };
