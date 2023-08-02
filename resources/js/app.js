@@ -9,8 +9,9 @@ const app = createApp({
   setup() {
     const modal = ref(null);
     
-    const openModal = () => {
+    const openModal = (num) => {
         modal.value.open();
+        console.log(num);
     };
 
     return {

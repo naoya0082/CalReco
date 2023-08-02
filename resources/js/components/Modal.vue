@@ -6,11 +6,10 @@
                 <hr>
                 <form method="POST" action="/home">
                     <div class="input-weight">
-                        <input type="number" name="weight" id="weight" step="0.01" style="width: 70%; margin-right: 5px;">
+                        <input type="number" name="weight" id="weight" step="0.01" style="width: 70%; margin-right: 5px;" placeholder="60">
                         <input type="submit" name="" id="" class="weight-upd-btn btn btn-primary mt-2" value="登録" @click="updateWeight">
                     </div>
                 </form>
-                <a href="/">あああ</a>
                 <div class="close-modal" @click="close">✕</div>
             </div>
         </div>
@@ -62,7 +61,7 @@ export default {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
     display: block
 }
 
