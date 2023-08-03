@@ -41,7 +41,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    // ログインに成功した際に実行されるメソッド
+    // ログインに成功した際に自動で実行されるメソッド
     protected function authenticated(Request $request, $user)
     {
         self::insertLoginHistory($user);

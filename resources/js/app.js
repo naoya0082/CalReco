@@ -10,8 +10,7 @@ const app = createApp({
     const modal = ref(null);
     
     const openModal = (num) => {
-        modal.value.open();
-        console.log(num);
+        modal.value.open(num);
     };
 
     return {
