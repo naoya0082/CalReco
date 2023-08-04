@@ -19,7 +19,7 @@ class WeightController extends Controller
 
         // 体重の更新履歴を記録
         // 同日の記録があればアップデート
-        // $insert_weight_id = WeightHistory::insertGetId([
+        // $insert_weight_id = UserWeightHistory::insertGetId([
             
         // ]);
 
