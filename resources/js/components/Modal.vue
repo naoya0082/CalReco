@@ -41,14 +41,20 @@ export default {
     const isOpenWeightModal = ref(false);
     const isOpenMealModal = ref(false);
     const weight = ref('');
+    const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     const submitForm = async () => {
         if(weight.value != '') {
             try {
-                const response = await axios.post('/api/weight', { weight: weight.value });
-                // 何らかの処理
+                const response = await axios.post('/api/weight', { weight: weight.value }, {
+                        headers: {
+                        'X-CSRF-TOKEN': token
+                    }
+                });
+                
                 isOpenWeightModal.value = false;
                 console.log(response);
+                console.log('Success');
             } catch (error) {
                 // エラーハンドリング
                 alert("エラーが発生しました。時間をおいて再度お試しください。");
@@ -77,7 +83,8 @@ export default {
         open,
         close,
         weight,
-        submitForm
+        submitForm,
+        token
     }
   }
 }
@@ -126,4 +133,3 @@ export default {
     justify-content: left;
 }
 </style>
-  
